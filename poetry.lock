@@ -1499,6 +1499,31 @@ files = [
 ]
 
 [[package]]
+name = "lightgbm"
+version = "4.5.0"
+description = "LightGBM Python Package"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "lightgbm-4.5.0-py3-none-macosx_10_15_x86_64.whl", hash = "sha256:2212e2166af6379bc005e6f7041dd2dcba3750238eccbc55d09d3c0717c51187"},
+    {file = "lightgbm-4.5.0-py3-none-macosx_12_0_arm64.whl", hash = "sha256:1301aa853e1fe4bf318539aa132f373862b04aa537af502508711ce03dffff09"},
+    {file = "lightgbm-4.5.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:7f0a3dded769d83560845f2c3fe1966630ec1ca527c380d9d48d9b35579a796e"},
+    {file = "lightgbm-4.5.0-py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:960a0e7c077de0ca3053f1325d3edfc92ea815acf5176adcacdea0f635aeef9b"},
+    {file = "lightgbm-4.5.0-py3-none-win_amd64.whl", hash = "sha256:7ccb73ee9fb74fbbf89ad24c57a6edad505aa8f2165d02b999a082dbbbb0ee57"},
+    {file = "lightgbm-4.5.0.tar.gz", hash = "sha256:e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba"},
+]
+
+[package.dependencies]
+numpy = ">=1.17.0"
+scipy = "*"
+
+[package.extras]
+arrow = ["cffi (>=1.15.1)", "pyarrow (>=6.0.1)"]
+dask = ["dask[array,dataframe,distributed] (>=2.0.0)", "pandas (>=0.24.0)"]
+pandas = ["pandas (>=0.24.0)"]
+scikit-learn = ["scikit-learn (!=0.22.0)"]
+
+[[package]]
 name = "markupsafe"
 version = "2.1.5"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -1665,6 +1690,33 @@ files = [
     {file = "mistune-3.0.2-py3-none-any.whl", hash = "sha256:71481854c30fdbc938963d3605b72501f5c10a9320ecd412c121c163a1c7d205"},
     {file = "mistune-3.0.2.tar.gz", hash = "sha256:fc7f93ded930c92394ef2cb6f04a8aabab4117a91449e72dcc8dfa646a508be8"},
 ]
+
+[[package]]
+name = "mizani"
+version = "0.13.0"
+description = "Scales for Python"
+optional = false
+python-versions = ">=3.10"
+files = [
+    {file = "mizani-0.13.0-py3-none-any.whl", hash = "sha256:741d3ce79f1ee0bfa039bc6d84a395ae5024177893697973667b9ce73470c50e"},
+    {file = "mizani-0.13.0.tar.gz", hash = "sha256:3d658df352a1c6342eb56b146ae242ab916bd717ecd75ffb14961559ccbc9cb8"},
+]
+
+[package.dependencies]
+numpy = ">=1.23.5"
+pandas = ">=2.2.0"
+scipy = ">=1.8.0"
+tzdata = {version = "*", markers = "platform_system == \"Windows\" or platform_system == \"Emscripten\""}
+
+[package.extras]
+all = ["mizani[build]", "mizani[dev]", "mizani[doc]", "mizani[lint]", "mizani[test]"]
+build = ["build", "wheel"]
+dev = ["mizani[typing]", "notebook", "pre-commit", "twine"]
+doc = ["numpydoc (>=1.7.0)", "sphinx (>=7.2.0)"]
+lint = ["ruff"]
+rtd = ["mock"]
+test = ["pytest-cov (>=4.0.0)"]
+typing = ["pandas-stubs", "pyright (==1.1.386)"]
 
 [[package]]
 name = "mypy"
@@ -2055,6 +2107,24 @@ files = [
 ]
 
 [[package]]
+name = "patsy"
+version = "0.5.6"
+description = "A Python package for describing statistical models and for building design matrices."
+optional = false
+python-versions = "*"
+files = [
+    {file = "patsy-0.5.6-py2.py3-none-any.whl", hash = "sha256:19056886fd8fa71863fa32f0eb090267f21fb74be00f19f5c70b2e9d76c883c6"},
+    {file = "patsy-0.5.6.tar.gz", hash = "sha256:95c6d47a7222535f84bff7f63d7303f2e297747a598db89cf5c67f0c0c7d2cdb"},
+]
+
+[package.dependencies]
+numpy = ">=1.4"
+six = "*"
+
+[package.extras]
+test = ["pytest", "pytest-cov", "scipy"]
+
+[[package]]
 name = "pexpect"
 version = "4.9.0"
 description = "Pexpect allows easy control of interactive console applications."
@@ -2195,6 +2265,35 @@ files = [
 [package.dependencies]
 packaging = "*"
 tenacity = ">=6.2.0"
+
+[[package]]
+name = "plotnine"
+version = "0.14.0"
+description = "A Grammar of Graphics for Python"
+optional = false
+python-versions = ">=3.10"
+files = [
+    {file = "plotnine-0.14.0-py3-none-any.whl", hash = "sha256:12ba4f65bd5353b22a892c5398463a7483b133753861ed1efc7543e5907f65d7"},
+    {file = "plotnine-0.14.0.tar.gz", hash = "sha256:377f40eec2b4c43fa9208853f98b6f1489845e1219dcbfdd5aad73460da6146e"},
+]
+
+[package.dependencies]
+matplotlib = ">=3.8.0"
+mizani = ">=0.13.0,<0.14.0"
+numpy = ">=1.23.5"
+pandas = ">=2.2.0"
+scipy = ">=1.8.0"
+statsmodels = ">=0.14.0"
+
+[package.extras]
+all = ["plotnine[build]", "plotnine[dev]", "plotnine[doc]", "plotnine[extra]", "plotnine[lint]", "plotnine[test]"]
+build = ["build", "wheel"]
+dev = ["plotnine[typing]", "pre-commit", "twine"]
+doc = ["click", "jupyter", "nbsphinx", "numpydoc (>=0.9.1)", "quartodoc (>=0.7.2)"]
+extra = ["adjustText (>=1.2.0)", "geopandas (>=1.0.0)", "scikit-learn (>1.2.0)", "scikit-misc (>=0.5.1)"]
+lint = ["ruff"]
+test = ["pytest-cov (>=4.0.0)"]
+typing = ["ipython", "pandas-stubs", "pyright (==1.1.386)"]
 
 [[package]]
 name = "pluggy"
@@ -3040,6 +3139,37 @@ pure-eval = "*"
 tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
+name = "statsmodels"
+version = "0.14.4"
+description = "Statistical computations and models for Python"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "statsmodels-0.14.4-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:7a62f1fc9086e4b7ee789a6f66b3c0fc82dd8de1edda1522d30901a0aa45e42b"},
+    {file = "statsmodels-0.14.4-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:46ac7ddefac0c9b7b607eed1d47d11e26fe92a1bc1f4d9af48aeed4e21e87981"},
+    {file = "statsmodels-0.14.4-cp310-cp310-win_amd64.whl", hash = "sha256:9729642884147ee9db67b5a06a355890663d21f76ed608a56ac2ad98b94d201a"},
+    {file = "statsmodels-0.14.4-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:5ed7e118e6e3e02d6723a079b8c97eaadeed943fa1f7f619f7148dfc7862670f"},
+    {file = "statsmodels-0.14.4-cp311-cp311-win_amd64.whl", hash = "sha256:a6087ecb0714f7c59eb24c22781491e6f1cfffb660b4740e167625ca4f052056"},
+    {file = "statsmodels-0.14.4-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:17672b30c6b98afe2b095591e32d1d66d4372f2651428e433f16a3667f19eabb"},
+    {file = "statsmodels-0.14.4-cp312-cp312-win_amd64.whl", hash = "sha256:7f7917a51766b4e074da283c507a25048ad29a18e527207883d73535e0dc6184"},
+    {file = "statsmodels-0.14.4-cp313-cp313-win_amd64.whl", hash = "sha256:81030108d27aecc7995cac05aa280cf8c6025f6a6119894eef648997936c2dd0"},
+    {file = "statsmodels-0.14.4-cp39-cp39-win_amd64.whl", hash = "sha256:8286f69a5e1d0e0b366ffed5691140c83d3efc75da6dbf34a3d06e88abfaaab6"},
+    {file = "statsmodels-0.14.4.tar.gz", hash = "sha256:5d69e0f39060dc72c067f9bb6e8033b6dccdb0bae101d76a7ef0bcc94e898b67"},
+]
+
+[package.dependencies]
+numpy = ">=1.22.3,<3"
+packaging = ">=21.3"
+pandas = ">=1.4,<2.1.0 || >2.1.0"
+patsy = ">=0.5.6"
+scipy = ">=1.8,<1.9.2 || >1.9.2"
+
+[package.extras]
+build = ["cython (>=3.0.10)"]
+develop = ["colorama", "cython (>=3.0.10)", "cython (>=3.0.10,<4)", "flake8", "isort", "joblib", "matplotlib (>=3)", "pytest (>=7.3.0,<8)", "pytest-cov", "pytest-randomly", "pytest-xdist", "pywinpty", "setuptools-scm[toml] (>=8.0,<9.0)"]
+docs = ["ipykernel", "jupyter-client", "matplotlib", "nbconvert", "nbformat", "numpydoc", "pandas-datareader", "sphinx"]
+
+[[package]]
 name = "tenacity"
 version = "9.0.0"
 description = "Retry code until it succeeds"
@@ -3300,4 +3430,4 @@ scikit-learn = ["scikit-learn"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "f5becee56bbebd9a0d6e7e9c95b2140c6ce1c90946c4ac60e0b398d9f3153776"
+content-hash = "a940f19dde5c209a091426d695bc5fdfe6d89648fa6de03febfc9b1a04763e1d"
