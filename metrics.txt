@@ -1,0 +1,5 @@
+INFO:root:User ID: jijiji, Start time: 1732555199.0137208
+INFO:root:User ID: a, Start time: 1732556060.1429865
+INFO:root:User ID: 3, Start time: 1732556064.764824
+ERROR:root:User ID: 3, Error: User not found, Status Code: 404, Start time: 1732556298.884485
+INFO:root:User ID: a, Start time: 1732556313.5842135
