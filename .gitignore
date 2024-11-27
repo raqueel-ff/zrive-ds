@@ -162,3 +162,15 @@ cython_debug/
 /src/module2/.env
 /src/module2/orders.parquet/
 /src/module_3/feature_frame.csv
+/src/module_5/financials_against_return.feather
+/src/module_6/bin/model.joblib
+/src/module_6/data/inventory.parquet
+/src/module_6/data/orders.parquet
+/src/module_6/data/regulars.parquet
+/src/module_6/data/users.parquet
+/src/module_6/data/abandoned_carts.parquet
+/src/module_6/data/inventory.parquet
+/src/module_6/data/orders.parquet
+/src/module_6/data/regulars.parquet
+/src/module_6/data/users.parquet
+/src/module_6/data/abandoned_carts.parquet

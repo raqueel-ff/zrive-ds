@@ -3,7 +3,13 @@ import pandas as pd
 
 
 def count_regulars_in_order(order: pd.DataFrame, user_regulars: pd.DataFrame) -> int:
-    return len(set(order.item_ids).intersection(set(user_regulars.variant_id.values)))
+<<<<<<<< HEAD:src/module_6/src/basket_model/utils/features.py
+    return len(
+        set(order.ordered_items).intersection(set(user_regulars.variant_id.values))
+    )
+========
+    return len(set(order.ordered_items).intersection(set(user_regulars.variant_id.values)))
+>>>>>>>> d18b198d92ee7ad3bd70168acc3faf12f519925c:src/module_6/basket_model/utils/features.py
 
 
 def count_regulars_in_orders(
@@ -19,14 +25,29 @@ def count_regulars_in_orders(
 def compute_basket_value(orders: pd.DataFrame, mean_item_price: float) -> float:
     return orders.item_count * mean_item_price
 
+<<<<<<<< HEAD:src/module_6/src/basket_model/utils/features.py
 
+# Fabrica features como el número de artículos regulares y valor del pedido
+========
+#Fabrica features como el número de artículos regulares y valor del pedido
+>>>>>>>> d18b198d92ee7ad3bd70168acc3faf12f519925c:src/module_6/basket_model/utils/features.py
 def enrich_orders(
     orders: pd.DataFrame, regulars: pd.DataFrame, mean_item_price: float
 ) -> pd.DataFrame:
     enriched_orders = orders.copy()
+<<<<<<<< HEAD:src/module_6/src/basket_model/utils/features.py
+    # Calcula el número de artículos regulares en cada pedido
     enriched_orders["regulars_count"] = count_regulars_in_orders(
         enriched_orders, regulars
     )
+    # Valor medio de la cesta
+========
+    #Calcula el número de artículos regulares en cada pedido
+    enriched_orders["regulars_count"] = count_regulars_in_orders(
+        enriched_orders, regulars
+    )
+    #Valor medio de la cesta
+>>>>>>>> d18b198d92ee7ad3bd70168acc3faf12f519925c:src/module_6/basket_model/utils/features.py
     enriched_orders["basket_value"] = compute_basket_value(
         enriched_orders, mean_item_price
     )
@@ -34,6 +55,11 @@ def enrich_orders(
 
 
 def build_prior_orders(enriched_orders: pd.DataFrame) -> pd.DataFrame:
+<<<<<<<< HEAD:src/module_6/src/basket_model/utils/features.py
+    # Crea DataFrame de pedidos anteriores para cada usuario
+========
+    #Crea DataFrame de pedidos anteriores para cada usuario
+>>>>>>>> d18b198d92ee7ad3bd70168acc3faf12f519925c:src/module_6/basket_model/utils/features.py
     prior_orders = enriched_orders.copy()
     prior_orders["user_order_seq_plus_1"] = prior_orders.user_order_seq + 1
     prior_orders["prior_basket_value"] = prior_orders["basket_value"]
@@ -56,6 +82,11 @@ def build_feature_frame(
 ) -> pd.DataFrame:
     enriched_orders = enrich_orders(orders, regulars, mean_item_price)
     prior_orders = build_prior_orders(enriched_orders)
+<<<<<<<< HEAD:src/module_6/src/basket_model/utils/features.py
+    # Training features (características actuales y anteriores de los pedidos)
+========
+    #Training features (características actuales y anteriores de los pedidos)
+>>>>>>>> d18b198d92ee7ad3bd70168acc3faf12f519925c:src/module_6/basket_model/utils/features.py
     return pd.merge(
         enriched_orders.loc[
             :,

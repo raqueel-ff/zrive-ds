@@ -1,0 +1,1 @@
+vegetta attack -duration=5s -targets=src/module_6/profiling/targets.txt -output=src/module_6/profiling.bin
